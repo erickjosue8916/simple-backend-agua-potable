@@ -1,7 +1,7 @@
 const config = {
   node_env: (process.env.NODE_ENV),
-  ip: process.env.NODE_ENV || '0.0.0.0',
-  port: Number(process.env.PORT || 3003),
+  ip: process.env.IP || '0.0.0.0',
+  port: process.env.PORT || 3001,
   mongo: {
     url: process.env.MONGOOSE_CONNECTION_URL || `mongodb://localhost:27017/test`,
   },
