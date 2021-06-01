@@ -17,7 +17,7 @@ exports.list = async (req, res) => {
 exports.listPending = async (req, res) => {
   try {
     const result = await customerService.listPending()
-    return res.json(result)
+    return res.json({data: result})
   } catch (error) {
     console.log(error)
     return res.status(400).json({
