@@ -1,8 +1,10 @@
 const authService = require('./auth.service')
-
+const { config } = require('../../config')
+const { encodeToken } = require('../../utils/jwt')
 
 exports.login = async (req, res) => {
   try {
+    const jwtConfig = config.jwt
     const { username, password, type } = req.body
 
     if (!username) return res.status(400).json({error: "username is required"})
@@ -16,7 +18,12 @@ exports.login = async (req, res) => {
         error: 'invalid credentials'
       })
     }
-    return res.status(200).json(user)
+    const accessToken = encodeToken({jwtConfig, payload: user})
+    const result = {
+      ...user,
+      access_token: accessToken
+    }
+    return res.status(200).json(result)
   } catch (error) {
     console.log(error)
     return res.status(400).json({

@@ -7,10 +7,14 @@ const config = {
   },
   firestore: {
     collections: {
-      customers: `${process.env.GOOGLE_FIRESTORE_COLLECTION_CUSTOMERS}`,
-      issues: `${process.env.GOOGLE_FIRESTORE_COLLECTION_ISSUES}`,
-      counterLogs: `${process.env.GOOGLE_FIRESTORE_COLLECTION_COUNTER_LOGS}`,
+      customers: `${process.env.GOOGLE_FIRESTORE_COLLECTION_CUSTOMERS}` || 'customers',
+      issues: `${process.env.GOOGLE_FIRESTORE_COLLECTION_ISSUES}` || 'issues',
+      counterLogs: `${process.env.GOOGLE_FIRESTORE_COLLECTION_COUNTER_LOGS}` || 'counter-logs',
     }
+  },
+  jwt: {
+    secretKey: process.env.JWT_SECRET_KEY,
+    duration: process.env.JWT_TOKEN_DURATION_MS || 3600
   }
 }
 
