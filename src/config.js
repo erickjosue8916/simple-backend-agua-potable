@@ -13,7 +13,7 @@ const config = {
     }
   },
   jwt: {
-    secret_key: process.env.JWT_SECRET_KEY,
+    secretKey: process.env.JWT_SECRET_KEY,
     duration: process.env.JWT_TOKEN_DURATION_MS || 3600
   }
 }
