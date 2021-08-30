@@ -16,6 +16,7 @@ exports.list = async (req, res) => {
 exports.create = async (req, res) => {
   try {
     const result = await usersService.create(req.body)
+    delete req.body.password
     return res.status('201').json({
       id: result._path.segments[1],
       ...req.body
