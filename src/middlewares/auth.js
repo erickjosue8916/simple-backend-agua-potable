@@ -11,7 +11,7 @@ exports.verifyAuthToken = async (req, res, next) => {
       return response.unauthorized(res, `Authorization token is not provided`)
     }
     const [, token] = authorization.split(' ')
-    const payload = decodeToken({jwtConfig, token})
+    const payload = await decodeToken({jwtConfig, token})
     req.user = payload
     next()
   } catch (error) {

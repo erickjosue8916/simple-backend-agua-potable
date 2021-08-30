@@ -8,11 +8,7 @@ exports.encodeToken = ({jwtConfig, payload}) => {
 
 exports.decodeToken = async ({jwtConfig, token}) => {
   const { secretKey } = jwtConfig
-  try {
-    const payload = jwt.verify(token, secretKey)
-    return payload
-  } catch (error) {
-    console.log(error)
-    return null
-  }
+  
+  const payload = jwt.verify(token, secretKey)
+  return payload
 }

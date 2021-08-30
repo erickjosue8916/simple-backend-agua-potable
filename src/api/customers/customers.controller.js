@@ -1,9 +1,15 @@
 const customerService = require('./customer.service')
 
 const issuesService = require('../issues/issues.service')
+const response = require('../../utils/response')
 
 exports.list = async (req, res) => {
   try {
+    const { user } = req
+    
+    if (user.type != `ADMIN`) {
+      return response.forbidden(res)
+    }
     const result = await customerService.list()
     return res.json(result)
   } catch (error) {

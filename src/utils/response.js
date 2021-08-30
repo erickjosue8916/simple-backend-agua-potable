@@ -24,7 +24,7 @@ exports.unauthorized = (res, message) => {
   return error(res, httpStatus.unauthorized, message)
 }
 
-exports.forbidden = (res, message) => {
+exports.forbidden = (res, message = `You do not have access to this resource`) => {
   return error(res, httpStatus.forbidden, message)
 }
 

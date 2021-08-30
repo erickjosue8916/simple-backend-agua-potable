@@ -1,5 +1,5 @@
 const dayjs = require('dayjs')
-const {Firestore} = require('@google-cloud/firestore')
+const { Firestore } = require('@google-cloud/firestore')
 const { parseRowResponse } = require('../../utils/firebase')
 
 const db = new Firestore()
