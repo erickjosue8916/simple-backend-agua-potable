@@ -1,12 +1,13 @@
 const { Router} = require('express')
 const controller = require('./customers.controller')
 const { router: counterLogRouter} = require('./counterLogs/counterLog.router')
+const { verifyAuthToken } = require('../../middlewares/auth')
 
 const router = Router()
 
 router.route('/')
   .post(controller.create)
-  .get(controller.list)
+  .get(verifyAuthToken, controller.list)
 
 router.get('/pending', controller.listPending)
 

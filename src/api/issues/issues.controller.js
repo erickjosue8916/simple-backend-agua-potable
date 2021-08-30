@@ -1,7 +1,13 @@
 const issuesService = require('./issues.service')
+const response = require('../../utils/response')
 
 exports.list = async (req, res) => {
   try {
+    const { user } = req
+    
+    if (user.type != `ADMIN`) {
+      return response.forbidden(res)
+    }
     const result = await issuesService.list()
     return res.json(result)
   } catch (error) {
@@ -23,9 +29,18 @@ exports.listUnResolved = async (req, res) => {
     })
   }
 }
+
 exports.create = async (req, res) => {
   try {
+    const { user } = req
+    
+    if (user.type != `CUSTOMER`) {
+      return response.forbidden(res, `only customer user can create a new issue`)
+    }
+
+    req.body.customer_id = user.dui
     const {id, payload} = await issuesService.createPayloadForNew(req.body)
+
     const result = await issuesService.create(id, payload)
     return res.json(result)
   } catch (error) {
