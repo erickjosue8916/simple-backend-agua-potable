@@ -18,11 +18,6 @@ const createCustomerUserPayload = ({customer, id}) => {
 
 exports.list = async (req, res) => {
   try {
-    const { user } = req
-    
-    if (user.type != `ADMIN`) {
-      return response.forbidden(res)
-    }
     const result = await customerService.list()
     return res.status(201).json(result)
   } catch (error) {
