@@ -1,0 +1,1170 @@
+{
+	"info": {
+		"_postman_id": "9bb797e7-8678-4e15-a753-3c227951e938",
+		"name": "DSI2- Agua Potable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "couterLogs",
+					"item": [
+						{
+							"name": "listCounterLogs",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/customers/:customerId/counter-logs",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										":customerId",
+										"counter-logs"
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "012345679"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "listCounterLogs",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{HOST}}/api/customers/:customerId/counter-logs",
+											"host": [
+												"{{HOST}}"
+											],
+											"path": [
+												"api",
+												"customers",
+												":customerId",
+												"counter-logs"
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "012345678"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "34"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22-AIpD/rl5/6KQQiEIlFaUWtSrcTM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 29 May 2021 04:30:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"2021-05-28\",\n        \"count\": 1990\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "createCounterLog",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"count\": 2190\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/customers/:customerId/counter-logs",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										":customerId",
+										"counter-logs"
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "012345679"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "createCounterLog",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"count\": 1990\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{HOST}}/api/customers/:customerId/counter-logs",
+											"host": [
+												"{{HOST}}"
+											],
+											"path": [
+												"api",
+												"customers",
+												":customerId",
+												"counter-logs"
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "012345678"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "269"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10d-K1B/f9RwxeB1gQqJJzpGHsRLb4k\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 29 May 2021 03:44:37 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"012345678\",\n    \"monthlyCapturePending\": false,\n    \"totalCount\": 1990,\n    \"locationReference\": \"Al lado dela casa del camionero\",\n    \"lastUpdate\": \"2021-05-28T21:44:37-06:00\",\n    \"firstName\": \"Erick Josué\",\n    \"count\": 0,\n    \"lastName\": \"Saravia Aragón\",\n    \"telephone\": \"12345678\",\n    \"orderReference\": 1\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "issues",
+					"item": [
+						{
+							"name": "createIssue",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"unresolved issue\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/customers/:customerId/issues",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										":customerId",
+										"issues"
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "012345678"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "createIssue return status 201 (created)",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"description\": \"unresolved issue\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{HOST}}/api/customers/:customerId/issues",
+											"host": [
+												"{{HOST}}"
+											],
+											"path": [
+												"api",
+												"customers",
+												":customerId",
+												"issues"
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "012345678"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 29 May 2021 04:27:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Content-Length",
+											"value": "0"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "listCustomerIssues",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"unresolved issue\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/customers/:customerId/issues",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										":customerId",
+										"issues"
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "012345678"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "listCustomerIssues",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{HOST}}/api/customers/:customerId/issues",
+											"host": [
+												"{{HOST}}"
+											],
+											"path": [
+												"api",
+												"customers",
+												":customerId",
+												"issues"
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "012345678"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "427"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1ab-y2Zl6zNSgo2//PS50tzAhgSxF30\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 29 May 2021 04:26:07 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"PJyt1MW6qK68Mf0LQheR\",\n        \"isResolved\": false,\n        \"date\": \"2021-05-28T22:19:16-06:00\",\n        \"description\": \"unresolved issue\",\n        \"customerId\": \"012345678\"\n    },\n    {\n        \"id\": \"kIZDcrD1e2RKgu0olq5L\",\n        \"customerId\": \"012345678\",\n        \"date\": \"2021-05-28T22:18:33-06:00\",\n        \"description\": \"unresolved issue\",\n        \"isResolved\": false\n    },\n    {\n        \"id\": \"xpsvF0pDsavI2Vkv6rH3\",\n        \"description\": \"unresolved issue\",\n        \"date\": \"2021-05-28T22:21:19-06:00\",\n        \"customerId\": \"012345678\",\n        \"isResolved\": false\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Erick Josué\",\r\n    \"lastName\": \"Saravia Aragón\",\r\n    \"dui\": \"012345678\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\",\r\n    \"orderReference\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/customers",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listCustomers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Erick Josué\",\r\n    \"lastName\": \"Saravia Aragón\",\r\n    \"dui\": \"012345678\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\",\r\n    \"orderReference\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/customers",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "listCustomers success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Erick Josué\",\r\n    \"lastName\": \"Saravia Aragón\",\r\n    \"dui\": \"012345678\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\",\r\n    \"orderReference\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/customers",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "533"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"215-sW3m2eCAVbiitJBj6HXHSdcq3wk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 18:03:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":\"012345678\",\"orderReference\":1,\"lastName\":\"Saravia Aragón\",\"monthlyCapturePending\":true,\"telephone\":\"12345678\",\"firstName\":\"Erick Josué\",\"totalCount\":0,\"locationReference\":\"Al lado dela casa del camionero\",\"lastUpdate\":\"2021-08-29T15:07:55-06:00\",\"count\":0},{\"id\":\"012345679\",\"locationReference\":\"Al lado dela casa del camionero\",\"monthlyCapturePending\":true,\"lastName\":\"Saravia Aragón\",\"totalCount\":0,\"lastUpdate\":\"2021-08-29T21:24:03-06:00\",\"count\":0,\"telephone\":\"12345678\",\"orderReference\":1,\"firstName\":\"Erick Josué\"}]"
+						}
+					]
+				},
+				{
+					"name": "listPenddingCustomers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Erick Josué\",\r\n    \"lastName\": \"Saravia Aragón\",\r\n    \"dui\": \"012345678\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\",\r\n    \"orderReference\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/customers/pending",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"customers",
+								"pending"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "listPenddingCustomers success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Erick Josué\",\r\n    \"lastName\": \"Saravia Aragón\",\r\n    \"dui\": \"012345678\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\",\r\n    \"orderReference\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/customers/pending",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										"pending"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "542"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21e-j3wLfKIvHJ41CeIF3SiJk3Nxz+s\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 18:04:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"data\":[{\"id\":\"012345678\",\"orderReference\":1,\"telephone\":\"12345678\",\"totalCount\":0,\"firstName\":\"Erick Josué\",\"monthlyCapturePending\":true,\"lastName\":\"Saravia Aragón\",\"locationReference\":\"Al lado dela casa del camionero\",\"lastUpdate\":\"2021-08-29T15:07:55-06:00\",\"count\":0},{\"id\":\"012345679\",\"locationReference\":\"Al lado dela casa del camionero\",\"firstName\":\"Erick Josué\",\"totalCount\":0,\"telephone\":\"12345678\",\"count\":0,\"monthlyCapturePending\":true,\"lastUpdate\":\"2021-08-29T21:24:03-06:00\",\"lastName\":\"Saravia Aragón\",\"orderReference\":1}]}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "issues",
+			"item": [
+				{
+					"name": "listIssues",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/v1/issues",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createIssue",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\": \"01234567\",\r\n    \"description\": \"my description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/v1/issues",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"issues"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"jalex\",\n    \"password\": \"123\",\n    \"type\": \"EMPLOYEE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/auth/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Invalida Authentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"ejsaravia\",\n    \"password\": \"1234\",\n    \"type\": \"ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/auth/login",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "31"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f-GRJaMjBkGjfkfZSqZKXsmyEPmpI\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 17:53:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"error\":\"invalid credentials\"}"
+						},
+						{
+							"name": "Admin loggin success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"ejsaravia\",\n    \"password\": \"123\",\n    \"type\": \"ADMIN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/auth/login",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ae-F366rrLfwn0m/wkAhDvfJdZhzZY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 17:54:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"NB1NvY6fgea2eH4d0e1g\",\"type\":\"ADMIN\",\"name\":\"Erick Josue\",\"bithDate\":\"1999-02-08\",\"username\":\"ejsaravia\",\"password\":\"123\",\"dui\":\"12345678\",\"lastName\":\"Saravia Aragon\"}"
+						},
+						{
+							"name": "customer logiin success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"012345679\",\n    \"password\": \"012345679\",\n    \"type\": \"CUSTOMER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/auth/login",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "555"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"22b-2qfDtK09A+lTgjWqWwPrFdy0nng\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 17:54:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"jk8ycRIl2K3um4X1xcBV\",\"lastName\":\"Saravia Aragón\",\"password\":\"012345679\",\"dui\":\"012345679\",\"bithDate\":\"\",\"name\":\"Erick Josué\",\"type\":\"CUSTOMER\",\"username\":\"012345679\",\"access_token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImprOHljUklsMkszdW00WDF4Y0JWIiwibGFzdE5hbWUiOiJTYXJhdmlhIEFyYWfDs24iLCJwYXNzd29yZCI6IjAxMjM0NTY3OSIsImR1aSI6IjAxMjM0NTY3OSIsImJpdGhEYXRlIjoiIiwibmFtZSI6IkVyaWNrIEpvc3XDqSIsInR5cGUiOiJDVVNUT01FUiIsInVzZXJuYW1lIjoiMDEyMzQ1Njc5IiwiaWF0IjoxNjMwNDMyNDgzLCJleHAiOjE2MzA0MzYwODN9.WV2QIkbmBb3x70Q5ZYLhCoHi9ude8AaMrxKZFL2GpGk\"}"
+						},
+						{
+							"name": "employee login success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\": \"jalex\",\n    \"password\": \"123\",\n    \"type\": \"EMPLOYEE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/auth/login",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "179"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b3-oVnsjmoYvNMGV36QHFI4mnmn4Zw\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 18:02:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"PLxIKJmcghhzWBgnX9Eb\",\"username\":\"jalex\",\"password\":\"123\",\"dui\":\"123456789\",\"name\":\"Javier Alexander\",\"bithDate\":\"1999-02-08\",\"lastName\":\"Morales Melara\",\"type\":\"EMPLOYEE\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "list Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/users",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list Users success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/users",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "353"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"161-PoBq8Vb6RkDNhTz9I2aD9ji2f0A\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 17:53:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":\"NB1NvY6fgea2eH4d0e1g\",\"type\":\"ADMIN\",\"dui\":\"12345678\",\"bithDate\":\"1999-02-08\",\"password\":\"123\",\"lastName\":\"Saravia Aragon\",\"name\":\"Erick Josue\",\"username\":\"ejsaravia\"},{\"id\":\"jk8ycRIl2K3um4X1xcBV\",\"dui\":\"012345679\",\"type\":\"CUSTOMER\",\"bithDate\":\"\",\"lastName\":\"Saravia Aragón\",\"password\":\"012345679\",\"username\":\"012345679\",\"name\":\"Erick Josué\"}]"
+						}
+					]
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"EMPLOYEE\",\n    \"dui\": \"123456789\",\n    \"bithDate\": \"1999-02-08\",\n    \"password\": \"123\",\n    \"lastName\": \"Morales Melara\",\n    \"name\": \"Javier Alexander\",\n    \"username\": \"jalex\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/users",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "create user as EMPLOYEE",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"type\": \"EMPLOYEE\",\n    \"dui\": \"123456789\",\n    \"bithDate\": \"1999-02-08\",\n    \"password\": \"123\",\n    \"lastName\": \"Morales Melara\",\n    \"name\": \"Javier Alexander\",\n    \"username\": \"jalex\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/users",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "162"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a2-paSMNPuM6vQj0wMdkAucSAHHNDA\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 31 Aug 2021 18:01:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"PLxIKJmcghhzWBgnX9Eb\",\"type\":\"EMPLOYEE\",\"dui\":\"123456789\",\"bithDate\":\"1999-02-08\",\"lastName\":\"Morales Melara\",\"name\":\"Javier Alexander\",\"username\":\"jalex\"}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "localhost:3001"
+		}
+	]
+}
