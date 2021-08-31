@@ -6,6 +6,6 @@ const router = Router()
 
 router.route('/')
   .post(verifyAuthToken, controller.create)
-  .get(verifyAuthToken, controller.list)
+  .get(controller.list)
 
 exports.router = router

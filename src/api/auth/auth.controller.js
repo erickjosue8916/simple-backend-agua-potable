@@ -19,9 +19,12 @@ exports.login = async (req, res) => {
       })
     }
     const accessToken = encodeToken({jwtConfig, payload: user})
-    const result = {
-      ...user,
-      access_token: accessToken
+    let result = {
+      ...user
+    }
+
+    if (type === `CUSTOMER`) {
+      result.access_token = accessToken
     }
     return res.status(200).json(result)
   } catch (error) {
