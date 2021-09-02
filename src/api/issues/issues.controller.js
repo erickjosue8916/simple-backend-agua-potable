@@ -34,10 +34,11 @@ exports.create = async (req, res) => {
       return response.forbidden(res, `only customer user can create a new issue`)
     }
 
-    req.body.customer_id = user.dui
-    const {id, payload} = await issuesService.createPayloadForNew(req.body)
-
-    const result = await issuesService.create(id, payload)
+    req.body.customerId = user.dui
+    const payload = {
+      ...req.body
+    }
+    const result = await issuesService.create(payload)
     return res.json(result)
   } catch (error) {
     console.log(error)

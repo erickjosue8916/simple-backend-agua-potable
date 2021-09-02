@@ -27,7 +27,13 @@ exports.create = async ({customerId, description}) => {
     isResolved: false
   }
   const res = await db.collection(collectionName).add(payload)
-  return res.id
+  const resultId = res.id
+  const document = await db.collection(collectionName).doc(resultId).get()
+  const data = {
+    id: res.id,
+    ...document.data()
+  }
+  return data
 }
 
 exports.getIssueById = async (id) => {
