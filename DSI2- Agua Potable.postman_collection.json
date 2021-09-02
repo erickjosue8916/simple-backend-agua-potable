@@ -17,7 +17,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{HOST}}/api/customers/:customerId/counter-logs",
+									"raw": "{{HOST}}/api/customers/:customerId/counter-logs?=char",
 									"host": [
 										"{{HOST}}"
 									],
@@ -26,6 +26,96 @@
 										"customers",
 										":customerId",
 										"counter-logs"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "char"
+										}
+									],
+									"variable": [
+										{
+											"key": "customerId",
+											"value": "012345679"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "listCounterLogs",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{HOST}}/api/customers/:customerId/counter-logs",
+											"host": [
+												"{{HOST}}"
+											],
+											"path": [
+												"api",
+												"customers",
+												":customerId",
+												"counter-logs"
+											],
+											"variable": [
+												{
+													"key": "customerId",
+													"value": "012345678"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "34"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"22-AIpD/rl5/6KQQiEIlFaUWtSrcTM\""
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 29 May 2021 04:30:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"2021-05-28\",\n        \"count\": 1990\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "listCounterLogsChar",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/customers/:customerId/counter-logs/char",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"customers",
+										":customerId",
+										"counter-logs",
+										"char"
 									],
 									"variable": [
 										{
@@ -626,13 +716,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{HOST}}/api/v1/issues",
+							"raw": "{{HOST}}/api/issues",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
 								"api",
-								"v1",
 								"issues"
 							]
 						}
@@ -646,7 +735,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customer_id\": \"01234567\",\r\n    \"description\": \"my description\"\r\n}",
+							"raw": "{\r\n    \"description\": \"my ploblem with your services 6\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -654,18 +743,83 @@
 							}
 						},
 						"url": {
-							"raw": "{{HOST}}/api/v1/issues",
+							"raw": "{{HOST}}/api/issues",
 							"host": [
 								"{{HOST}}"
 							],
 							"path": [
 								"api",
-								"v1",
 								"issues"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "createIssue success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"description\": \"my ploblem with your services 6\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/issues",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"issues"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a0-sPPi8eM7zThEi6c60GHQ68D2PKM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 02 Sep 2021 09:59:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"tBWboCklUVyg8qaAwo6d\",\"description\":\"my ploblem with your services 6\",\"isResolved\":false,\"customerId\":\"067236726\",\"createAt\":\"2021-09-02T03:59:32-06:00\"}"
+						}
+					]
 				}
 			]
 		},
@@ -679,7 +833,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"jalex\",\n    \"password\": \"123\",\n    \"type\": \"EMPLOYEE\"\n}",
+							"raw": "{\n    \"username\": \"067236726\",\n    \"password\": \"067236726\",\n    \"type\": \"CUSTOMER\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1141,6 +1295,16 @@
 			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjNQZFRiNTlvMkNiUjRLMnNRUWloIiwidHlwZSI6IkNVU1RPTUVSIiwiZHVpIjoiMDY3MjM2NzI2IiwidXNlcm5hbWUiOiIwNjcyMzY3MjYiLCJiaXRoRGF0ZSI6IiIsIm5hbWUiOiJPc2NhciBBbGV4aXMiLCJsYXN0TmFtZSI6IlBsZWl0ZXogUGVyZXoiLCJwYXNzd29yZCI6IjA2NzIzNjcyNiIsImlhdCI6MTYzMDU3NTk4OSwiZXhwIjoxNjMwNTc5NTg5fQ.HjENQF-7KL1cG2lW-LCiWG5x8REyVU-N0Vf1-sDBI3w",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
