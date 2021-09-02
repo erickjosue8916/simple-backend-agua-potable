@@ -7,5 +7,6 @@ router.route('/')
   .get(controller.list)
   .post(controller.create)
 
+router.get('/char', controller.char)
 
 exports.router = router
