@@ -25,7 +25,7 @@ exports.create = async (id, data) => {
 
 exports.createPayloadForNew = (data) => {
   const id = data.dui
-  delete data.dui
+  data.dui
   return {
     id, payload: {
       ...data,
@@ -51,6 +51,7 @@ exports.getCustomerById = async (id) => {
 }
 
 exports.updateStatus = async (id, status) => {
-  const result = db.collection(collection).doc(id).update({status})
+  const docRef = await db.collection(collection).doc(id)
+  const result = await docRef.update({status})
   return result
 }

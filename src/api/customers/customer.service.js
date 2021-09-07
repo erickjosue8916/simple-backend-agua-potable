@@ -24,7 +24,7 @@ exports.create = async (id, data) => {
 
 exports.createPayloadForNew = (data) => {
   const id = data.dui
-  delete data.dui
+  data.dui
   return {
     id, payload: {
       ...data,

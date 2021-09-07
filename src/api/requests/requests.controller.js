@@ -75,7 +75,7 @@ exports.updateStatus = async (req, res, next) => {
     if (![`approved`, `deleted`].includes(status)) {
       return response.badRequest(res, `Invalid update status`)
     }
-    const result = await requestsService.updateStatus(request.dui, status)
+    const result = await requestsService.updateStatus(request.id, status)
 
     req.body = request
     return next()
