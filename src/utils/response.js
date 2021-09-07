@@ -28,6 +28,9 @@ exports.forbidden = (res, message = `You do not have access to this resource`) =
   return error(res, httpStatus.forbidden, message)
 }
 
+exports.badRequest = (res, message = `You request is invalid`) => {
+  return error(res, httpStatus.badRequest, message)
+}
 
 exports.success = (res, data) => {
   return res.status(httpStatus.success.status).json(data)

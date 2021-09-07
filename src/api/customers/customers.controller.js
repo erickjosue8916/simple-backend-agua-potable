@@ -46,7 +46,10 @@ exports.create = async (req, res) => {
     const customer = await customerService.create(id, payload)
     const userPayload = createCustomerUserPayload({customer: payload, id})
     const user = await usersService.create(userPayload)
-    return res.json(user)
+    return res.json({
+      id,
+      ...userPayload
+    })
   } catch (error) {
     console.log(error)
     return res.status(400).json({

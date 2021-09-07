@@ -3,22 +3,23 @@ const { Firestore } = require('@google-cloud/firestore')
 const { parseRowResponse } = require('../../utils/firebase')
 
 const db = new Firestore()
+const collection = `requests`
 
 exports.list = async () => {
-  const query = await db.collection('customers').get()
+  const query = await db.collection(collection).get()
   const data = parseRowResponse(query)
   return data
 }
 
 exports.listPending = async () => {
-  const query = await db.collection('customers').where('monthlyCapturePending', '==', true).get()
+  const query = await db.collection(collection).where('status', '==', `pending`).get()
   const data = parseRowResponse(query)
   return data
 }
 
 
 exports.create = async (id, data) => {
-  const newCustomer = await db.collection('customers').doc(id).set(data)
+  const newCustomer = await db.collection(collection).doc(id).set(data)
   return newCustomer
 }
 
@@ -28,9 +29,8 @@ exports.createPayloadForNew = (data) => {
   return {
     id, payload: {
       ...data,
-      totalCount: 0,
-      count: 0,
-      monthlyCapturePending: true,
+      created: dayjs().format(),
+      status: `pending`,
       lastUpdate: dayjs().format()
     }
   }
@@ -38,7 +38,7 @@ exports.createPayloadForNew = (data) => {
 
 exports.getCustomerById = async (id) => {
   try {
-    const document = await db.collection('customers').doc(id).get()
+    const document = await db.collection(collection).doc(id).get()
     const data = {
       id: id,
       ...document.data()
@@ -48,4 +48,10 @@ exports.getCustomerById = async (id) => {
     console.log(error)
     throw error
   }
+}
+
+exports.updateStatus = async (id, status) => {
+  const docRef = await db.collection(collection).doc(id)
+  const result = await docRef.update({status})
+  return result
 }

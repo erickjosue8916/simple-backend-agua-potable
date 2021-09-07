@@ -708,6 +708,326 @@
 			]
 		},
 		{
+			"name": "requests",
+			"item": [
+				{
+					"name": "createRequest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jorge\",\r\n    \"lastName\": \"Saravia\",\r\n    \"dui\": \"012345679\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/requests",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"requests"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "createRequest",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"Jorge\",\r\n    \"lastName\": \"Saravia\",\r\n    \"dui\": \"012345679\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{HOST}}/api/requests",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"requests"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "252"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fc-yEbDmYF4pDIMh18T+qej2AZrK94\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Sep 2021 19:52:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\"012345679\",\"firstName\":\"Jorge\",\"lastName\":\"Saravia\",\"dui\":\"012345679\",\"telephone\":\"12345678\",\"locationReference\":\"Al lado dela casa del camionero\",\"created\":\"2021-09-07T13:52:40-06:00\",\"status\":\"pending\",\"lastUpdate\":\"2021-09-07T13:52:40-06:00\"}"
+						}
+					]
+				},
+				{
+					"name": "listRequests",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/requests",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"requests"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "listRequests",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/requests",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"requests"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "256"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"100-O6qzoe8BL+MuSjoWU0MW/ZGjciU\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Sep 2021 19:52:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[{\"id\":\"012345679\",\"created\":\"2021-09-05T21:40:38-06:00\",\"dui\":\" 012345679\",\"status\":\"approved\",\"locationReference\":\"Al lado dela casa del camionero\",\"lastUpdate\":\"2021-09-05T21:40:38-06:00\",\"telephone\":\"12345678\",\"firstName\":\"Jorge\",\"lastName\":\"Saravia\"}]"
+						}
+					]
+				},
+				{
+					"name": "getRequestById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/requests/:requestId",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"requests",
+								":requestId"
+							],
+							"variable": [
+								{
+									"key": "requestId",
+									"value": "012345679"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateRequestStatus",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/api/requests/:requestId/approved",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"requests",
+								":requestId",
+								"approved"
+							],
+							"variable": [
+								{
+									"key": "requestId",
+									"value": "012345679"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "updateRequestStatus",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{HOST}}/api/requests/:requestId/approved",
+									"host": [
+										"{{HOST}}"
+									],
+									"path": [
+										"api",
+										"requests",
+										":requestId",
+										"approved"
+									],
+									"variable": [
+										{
+											"key": "requestId",
+											"value": "012345679"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "154"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9a-ZsylLjuFcxcEYY9MC1LPCmyC4mY\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 07 Sep 2021 19:51:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\"id\":\" 012345679\",\"name\":\"Jorge\",\"lastName\":\"Saravia\",\"dui\":\" 012345679\",\"username\":\" 012345679\",\"password\":\" 012345679\",\"type\":\"CUSTOMER\",\"bithDate\":\"\"}"
+						}
+					]
+				},
+				{
+					"name": "listPenddingRequests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Erick Josué\",\r\n    \"lastName\": \"Saravia Aragón\",\r\n    \"dui\": \"012345678\",\r\n    \"telephone\": \"12345678\",\r\n    \"locationReference\": \"Al lado dela casa del camionero\",\r\n    \"orderReference\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/api/requests/pending",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"api",
+								"requests",
+								"pending"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "issues",
 			"item": [
 				{
